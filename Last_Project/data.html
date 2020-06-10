@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Hotel Bookings</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+             crossorigin="anonymous">
+
+  <!--CSS Link-->
+  <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+
+    <body>
+        <!-- Navigation Section -->
+        <div class="navigation">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="index.html">Hotel Bookings</a>
+            <button class="navbar-toggler  border border-white" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Dependencies
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="customer_type.html">Customer Type</a>
+                    <a class="dropdown-item" href="market_segment.html">Market Segment</a>
+                    <a class="dropdown-item" href="hotels.html">Hotel</a>
+                    <a class="dropdown-item" href="deposit_type.html">Deposit Type</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="comparisons.html">Comparison</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="data.html">Data</a>
+                </li>
+      
+              </ul>
+            </div>
+          </nav>
+        </div>
+  <!-- Content Section -->
+  <div class="container">
+    <div class="box">
+      <h3 class="title">Data</h3>
+      <hr>
+      <p>The data used for this project is displayed in the following table</p>
+      <br>
+      <div class="table-responsive" style="overflow-x:auto; overflow-y:auto; max-height:auto; max-width: 1000px;">
+
+        <table class="table table-striped">
+
+                <div class="section-one">
+                    <section id="intro">
+                        <h4>Rough Data</h4>
+                        <br> 
+                        <table border="1" class="dataframe">
+                            <thead>
+                              <tr style="text-align: right;">
+                                <th>hotel</th>
+                                <th>is_canceled</th>
+                                <th>lead_time</th>
+                                <th>arrival_date_year</th>
+                                <th>arrival_date_month</th>
+                                <th>arrival_date_week_number</th>
+                                <th>arrival_date_day_of_month</th>
+                                <th>stays_in_weekend_nights</th>
+                                <th>stays_in_week_nights</th>
+                                <th>adults</th>
+                                <th>children</th>
+                                <th>babies</th>
+                                <th>meal</th>
+                                <th>country</th>
+                                <th>market_segment</th>
+                                <th>distribution_channel</th>
+                                <th>is_repeated_guest</th>
+                                <th>previous_cancellations</th>
+                                <th>previous_bookings_not_canceled</th>
+                                <th>reserved_room_type</th>
+                                <th>assigned_room_type</th>
+                                <th>booking_changes</th>
+                                <th>deposit_type</th>
+                                <th>agent</th>
+                                <th>company</th>
+                                <th>days_in_waiting_list</th>
+                                <th>customer_type</th>
+                                <th>adr</th>
+                                <th>required_car_parking_spaces</th>
+                                <th>total_of_special_requests</th>
+                                <th>reservation_status</th>
+                                <th>reservation_status_date</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Resort Hotel</td>
+                                <td>0</td>
+                                <td>342</td>
+                                <td>2015</td>
+                                <td>July</td>
+                                <td>27</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td>0.0</td>
+                                <td>0</td>
+                                <td>BB</td>
+                                <td>PRT</td>
+                                <td>Direct</td>
+                                <td>Direct</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>C</td>
+                                <td>C</td>
+                                <td>3</td>
+                                <td>No Deposit</td>
+                                <td>NaN</td>
+                                <td>NaN</td>
+                                <td>0</td>
+                                <td>Transient</td>
+                                <td>0.0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>Check-Out</td>
+                                <td>2015-07-01</td>
+                              </tr>
+                              <tr>
+                                <td>Resort Hotel</td>
+                                <td>0</td>
+                                <td>737</td>
+                                <td>2015</td>
+                                <td>July</td>
+                                <td>27</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td>0.0</td>
+                                <td>0</td>
+                                <td>BB</td>
+                                <td>PRT</td>
+                                <td>Direct</td>
+                                <td>Direct</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>C</td>
+                                <td>C</td>
+                                <td>4</td>
+                                <td>No Deposit</td>
+                                <td>NaN</td>
+                                <td>NaN</td>
+                                <td>0</td>
+                                <td>Transient</td>
+                                <td>0.0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>Check-Out</td>
+                                <td>2015-07-01</td>
+                              </tr>
+                              <tr>
+                                <td>Resort Hotel</td>
+                                <td>0</td>
+                                <td>7</td>
+                                <td>2015</td>
+                                <td>July</td>
+                                <td>27</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0.0</td>
+                                <td>0</td>
+                                <td>BB</td>
+                                <td>GBR</td>
+                                <td>Direct</td>
+                                <td>Direct</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>A</td>
+                                <td>C</td>
+                                <td>0</td>
+                                <td>No Deposit</td>
+                                <td>NaN</td>
+                                <td>NaN</td>
+                                <td>0</td>
+                                <td>Transient</td>
+                                <td>75.0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>Check-Out</td>
+                                <td>2015-07-02</td>
+                              </tr>
+                              <tr>
+                                <td>Resort Hotel</td>
+                                <td>0</td>
+                                <td>13</td>
+                                <td>2015</td>
+                                <td>July</td>
+                                <td>27</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0.0</td>
+                                <td>0</td>
+                                <td>BB</td>
+                                <td>GBR</td>
+                                <td>Corporate</td>
+                                <td>Corporate</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>A</td>
+                                <td>A</td>
+                                <td>0</td>
+                                <td>No Deposit</td>
+                                <td>304.0</td>
+                                <td>NaN</td>
+                                <td>0</td>
+                                <td>Transient</td>
+                                <td>75.0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>Check-Out</td>
+                                <td>2015-07-02</td>
+                              </tr>
+                              <tr>
+                                <td>Resort Hotel</td>
+                                <td>0</td>
+                                <td>14</td>
+                                <td>2015</td>
+                                <td>July</td>
+                                <td>27</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>0.0</td>
+                                <td>0</td>
+                                <td>BB</td>
+                                <td>GBR</td>
+                                <td>Online TA</td>
+                                <td>TA/TO</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>A</td>
+                                <td>A</td>
+                                <td>0</td>
+                                <td>No Deposit</td>
+                                <td>240.0</td>
+                                <td>NaN</td>
+                                <td>0</td>
+                                <td>Transient</td>
+                                <td>98.0</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>Check-Out</td>
+                                <td>2015-07-03</td>
+                              </tr>
+                              <tr>
+                                <td>Resort Hotel</td>
+                                <td>0</td>
+                                <td>14</td>
+                                <td>2015</td>
+                                <td>July</td>
+                                <td>27</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>0.0</td>
+                                <td>0</td>
+                                <td>BB</td>
+                                <td>GBR</td>
+                                <td>Online TA</td>
+                                <td>TA/TO</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>A</td>
+                                <td>A</td>
+                                <td>0</td>
+                                <td>No Deposit</td>
+                                <td>240.0</td>
+                                <td>NaN</td>
+                                <td>0</td>
+                                <td>Transient</td>
+                                <td>98.0</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>Check-Out</td>
+                                <td>2015-07-03</td>
+                              </tr>
+                              <tr>
+                                <td>Resort Hotel</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2015</td>
+                                <td>July</td>
+                                <td>27</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>0.0</td>
+                                <td>0</td>
+                                <td>BB</td>
+                                <td>PRT</td>
+                                <td>Direct</td>
+                                <td>Direct</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>C</td>
+                                <td>C</td>
+                                <td>0</td>
+                                <td>No Deposit</td>
+                                <td>NaN</td>
+                                <td>NaN</td>
+                                <td>0</td>
+                                <td>Transient</td>
+                                <td>107.0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>Check-Out</td>
+                                <td>2015-07-03</td>
+                              </tr>
+                              <tr>
+                                <td>Resort Hotel</td>
+                                <td>0</td>
+                                <td>9</td>
+                                <td>2015</td>
+                                <td>July</td>
+                                <td>27</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>0.0</td>
+                                <td>0</td>
+                                <td>FB</td>
+                                <td>PRT</td>
+                                <td>Direct</td>
+                                <td>Direct</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>C</td>
+                                <td>C</td>
+                                <td>0</td>
+                                <td>No Deposit</td>
+                                <td>303.0</td>
+                                <td>NaN</td>
+                                <td>0</td>
+                                <td>Transient</td>
+                                <td>103.0</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>Check-Out</td>
+                                <td>2015-07-03</td>
+                              </tr>
+                              <tr>
+                                <td>Resort Hotel</td>
+                                <td>1</td>
+                                <td>85</td>
+                                <td>2015</td>
+                                <td>July</td>
+                                <td>27</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>3</td>
+                                <td>2</td>
+                                <td>0.0</td>
+                                <td>0</td>
+                                <td>BB</td>
+                                <td>PRT</td>
+                                <td>Online TA</td>
+                                <td>TA/TO</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>A</td>
+                                <td>A</td>
+                                <td>0</td>
+                                <td>No Deposit</td>
+                                <td>240.0</td>
+                                <td>NaN</td>
+                                <td>0</td>
+                                <td>Transient</td>
+                                <td>82.0</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>Canceled</td>
+                                <td>2015-05-06</td>
+                              </tr>
+                              <tr>
+                                <td>Resort Hotel</td>
+                                <td>1</td>
+                                <td>75</td>
+                                <td>2015</td>
+                                <td>July</td>
+                                <td>27</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>3</td>
+                                <td>2</td>
+                                <td>0.0</td>
+                                <td>0</td>
+                                <td>HB</td>
+                                <td>PRT</td>
+                                <td>Offline TA/TO</td>
+                                <td>TA/TO</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>D</td>
+                                <td>D</td>
+                                <td>0</td>
+                                <td>No Deposit</td>
+                                <td>15.0</td>
+                                <td>NaN</td>
+                                <td>0</td>
+                                <td>Transient</td>
+                                <td>105.5</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>Canceled</td>
+                                <td>2015-04-22</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                    </section>
+                    
+                </div>
+
+                        <br>
+      <div class="table-responsive" style="overflow-x:auto; overflow-y:auto; max-height:auto; max-width: 1000px;">
+
+        <table class="table table-striped">
+
+                <div class="section-one">
+                    <section id="intro">
+                        <h4>Clean Data</h4>
+                        <br>
+                        <table border="1" class="dataframe">
+                            <thead>
+                              <tr style="text-align: right;">
+                                <th>hotel</th>
+                                <th>is_canceled</th>
+                                <th>lead_time</th>
+                                <th>stays_in_weekend_nights</th>
+                                <th>stays_in_week_nights</th>
+                                <th>adults</th>
+                                <th>children</th>
+                                <th>babies</th>
+                                <th>meal</th>
+                                <th>market_segment</th>
+                                <th>distribution_channel</th>
+                                <th>is_repeated_guest</th>
+                                <th>previous_cancellations</th>
+                                <th>previous_bookings_not_canceled</th>
+                                <th>reserved_room_type</th>
+                                <th>assigned_room_type</th>
+                                <th>booking_changes</th>
+                                <th>deposit_type</th>
+                                <th>agent</th>
+                                <th>company</th>
+                                <th>days_in_waiting_list</th>
+                                <th>customer_type</th>
+                                <th>adr</th>
+                                <th>required_car_parking_spaces</th>
+                                <th>total_of_special_requests</th>
+                                <th>reservation_status</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>152</td>
+                                <td>1</td>
+                                <td>4</td>
+                                <td>2</td>
+                                <td>0.0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1.0</td>
+                                <td>0.0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>85.00</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1</td>
+                              </tr>
+                              <tr>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>66</td>
+                                <td>3</td>
+                                <td>8</td>
+                                <td>2</td>
+                                <td>0.0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1.0</td>
+                                <td>0.0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>60.64</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1</td>
+                              </tr>
+                              <tr>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>4</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>0.0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>1.0</td>
+                                <td>0.0</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>57.50</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                              </tr>
+                              <tr>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>72</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>0.0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1.0</td>
+                                <td>0.0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>72.25</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                              </tr>
+                              <tr>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>22</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>0.0</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1.0</td>
+                                <td>0.0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>79.00</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>0</td>
+                              </tr>
+                              <tr>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>0.0</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>3</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>0.0</td>
+                                <td>0.0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>99.00</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                              </tr>
+                              <tr>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>196</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>0.0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0.0</td>
+                                <td>1.0</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>114.00</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1</td>
+                              </tr>
+                              <tr>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>99</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>0.0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>4</td>
+                                <td>4</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1.0</td>
+                                <td>0.0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>55.80</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>1</td>
+                              </tr>
+                              <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>321</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>0.0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1.0</td>
+                                <td>0.0</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>62.80</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1</td>
+                              </tr>
+                              <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>131</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>0.0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1.0</td>
+                                <td>0.0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>132.30</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                    </section>
+                    
+                </div>
+             </div>
+             <div class="col-md-5">
+                <div class="section-two">
+                    <h2></h2>
+                    <br>
+                 
+                </div>
+             </div>
+            </div>
+    </div>
+
+
+        <!-- Bootstrap JS -->
+          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+            crossorigin="anonymous"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" 
+            crossorigin="anonymous"></script>
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 
+            crossorigin="anonymous"></script>
+      
+</body>
+</html>

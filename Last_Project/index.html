@@ -1,0 +1,208 @@
+	<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Hotel Bookings</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+             crossorigin="anonymous">
+                <!-- Bootstrap JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>     
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="https://d3js.org/d3-fetch.v1.min.js"></script>
+
+  <!--CSS Link-->
+  <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+
+    <body>
+        <!-- Navigation Section -->
+        <div class="navigation">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="index.html">Hotel Bookings</a>
+            <button class="navbar-toggler  border border-white" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Dependencies
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="customer_type.html">Customer Type</a>
+                    <a class="dropdown-item" href="market_segment.html">Market Segment</a>
+                    <a class="dropdown-item" href="hotels.html">Hotel</a>
+                    <a class="dropdown-item" href="deposit_type.html">Deposit Type</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="comparisons.html">Comparison</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="data.html">Data</a>
+                </li>
+      
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <!-- Content Section -->
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7 col-md-12">
+              <!-- Left box  -->
+              <div class="box">
+                <h3 class="title">Hotel Booking Cancellations</h3>
+                <hr>
+                <img src="Figures/Fig_correlation.png" class="vizualization rounded float-left" alt="Variables Correlation">
+                            <p>The objective of this project is to predict the hotel booking cancellations taking in consideration different information for a city hotel and a resort hotel, 
+							and includes variables such as when the booking was made, length of stay, the number of adults, children, and/or babies, and the number of available parking spaces, among other things.
+                            </p>
+                            <p>To accomplish this analysis, we first used the "Hotel booking demand" from Kaggle which contains information on demand data for two different types of hotels:  
+							One of the hotels (H1) is a resort hotel and the other is a city hotel (H2). Data comprehend bookings due to arrive between the 1st of July of 2015 and
+							the 31st of August 2017, including bookings that effectively arrived and bookings that were canceled. 
+                            </p>
+                            <p>After converting the dataset into a dataframe, we reviewed all variables available and converted those categorical variables into numeric in order to analyze the correlations and
+                            perform the predictions. It had to be taken into consideration that in some categorical variables like Agent or Company, “NULL” is presented as one of the categories. This should not 
+							be considered a missing value, but rather as “not applicable”. For example, if a booking “Agent” is defined as “NULL” it means that the booking did not came from a travel agent.							
+                            </p>
+              </div>
+
+              <div>
+<!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="title" id="exampleModalLabel">Will you cancel?</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body" id="model1" style="visibility: hidden">
+                      NO
+                    </div>
+                    <div class="modal-body" id = "model2" style="visibility: hidden">
+                      YES
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              </div>
+            </div>
+            <div class="col-lg-5 col-md-12">
+              <!-- Right Box -->
+              <div class="box">
+                <h5 class="title">Dependent variables</h5>
+                <hr>
+      
+      
+                <div class="container">
+                  <div class="row" style="padding-bottom: 30px;">
+                    <div class="col-6">
+                      <a href="customer_type.html">
+                        <img class="panel" src="Figures/Fig_customer_type.png" alt="Customer Type Dependency Graph">
+                      </a>
+                    </div>
+                    <div class="col-6">
+                      <a href="market_segment.html">
+                        <img class="panel" src="Figures/Fig_market_segment.png" alt="Market Segment Dependency Graph">
+                      </a>
+                    </div>
+                  </div>
+      
+                  <div class="row" style="padding-bottom: 30px;">
+                    <div class="col-6">
+                      <a href="hotels.html">
+                        <img class="panel" src="Figures/Fig_hotel.png" alt="Hotel Dependency Graph">
+                      </a>
+                    </div>
+                    <div class="col-6">
+                      <a href="deposit_type.html">
+                        <img class="panel" src="Figures/Fig_deposit_type.png" alt="Deposit Type Dependency Graph">
+                      </a>
+                    </div>
+      
+      
+                  </div>
+                </div>
+      
+      
+              </div>
+            </div>
+            <div class="col">
+                            <div class="box">
+                 <h3 class="title">Model test</h3>
+                 <hr>
+                <div class="row">
+                    <div class="col">
+                     <div class="form-group">
+                        <label for="exampleFormControlSelect1">Hotel</label>
+                        <select class="form-control" id="hotel">
+                          <option value="0">Resort Hotel</option>
+                          <option value="1">City Hotel</option>
+                        </select>
+                      </div>
+                </div>
+             </div>
+              <div class="row">
+                    <div class="col">
+                     <div class="form-group">
+                        <label for="exampleFormControlSelect1">Customer type</label>
+                        <select class="form-control" id="customertype">
+                          <option value="0">Transient(Passing customer)</option>
+                          <option value="1">Transient-Party</option>
+                          <option value="2">Contract(Membership)</option>
+                          <option value="3">Group</option>
+                        </select>
+                      </div>
+                </div>
+             </div>
+              <div class="row">
+                    <div class="col">
+                     <div class="form-group">
+                        <label for="exampleFormControlSelect1">Deposit type</label>
+                        <select class="form-control" id="deposittype">
+                          <option value="0">No Deposit</option>
+                          <option value="1">Non Refund</option>
+                          <option value="2">Refundable</option>
+                        </select>
+                      </div>
+                </div>
+             </div>
+             <div class="row">
+                <div class="col-xs-6 col-sm-3 col-md-6">
+                  <label for="inputZip">Adults</label>
+                  <input type="number" class="form-control" id="adults" max=55 min = 1>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-6">
+                  <label for="inputZip">Children</label>
+                  <input type="number" class="form-control" id="children" max=10  min = 0>
+                </div>
+               </div>
+               <br>
+               <div class="row">
+                   <button type="button" class="btn btn-secondary btn-lg btn-block" id="button1"  data-toggle="modal" data-target="#exampleModal">Will you cancel?</button>
+               </div>
+              </div>
+            </div>
+          </div>
+        </div>
+            <script src="js/form.js"></script>
+      
+</body>
+</html>
